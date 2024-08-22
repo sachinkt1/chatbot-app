@@ -1,0 +1,76 @@
+/* src/components/Chatbot.module.css */
+
+.mobileFrame {
+  position: relative;
+  width: 100%;
+  max-width: 375px; /* Mobile frame width */
+  height: 667px; /* Mobile frame height */
+  background-color: white;
+  border: 2px solid #dcdcdc;
+  border-radius: 36px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  /* Add responsive styles */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.statusBar {
+  height: 20px;
+  background-color: #f0f0f0;
+}
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 20px); /* Adjust height to exclude the status bar */
+}
+
+.chatArea {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+}
+
+.inputArea {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #dcdcdc;
+  background-color: #ffffff;
+}
+
+.inputField {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background-color: #f1f1f1;
+  outline: none;
+  max-width: 340px;
+}
+
+.sendButton {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.sendButton svg {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1rem;
+  fill: #f0f0f0;
+}
+
+.sendButton:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styles for mobile frame */
+@media (max-width: 768px) {
+  .mobileFrame {
+    max-width: 100%;
+    height: auto;
+  }
+}
