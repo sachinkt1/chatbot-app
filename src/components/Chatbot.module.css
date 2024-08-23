@@ -1,5 +1,46 @@
 /* src/components/Chatbot.module.css */
 
+/* Chatbot.module.css */
+
+.typingLoader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.typingDots {
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 2px;
+  background-color: #000;
+  border-radius: 50%;
+  animation: typingAnimation 1.5s infinite ease-in-out;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes typingAnimation {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 .mobileFrame {
   position: relative;
   width: 100%;
@@ -10,7 +51,6 @@
   border-radius: 36px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  /* Add responsive styles */
   margin: 0 auto; /* Center horizontally */
 }
 
@@ -30,6 +70,8 @@
   padding: 16px;
   overflow-y: auto;
   background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
 }
 
 .inputArea {
@@ -45,7 +87,6 @@
   border: none;
   background-color: #f1f1f1;
   outline: none;
-  max-width: 340px;
 }
 
 .sendButton {
@@ -73,4 +114,30 @@
     max-width: 100%;
     height: auto;
   }
+}
+
+/* Message alignment and styling */
+.message {
+  display: flex;
+  margin: 10px 0;
+}
+
+.textRight {
+  margin-left: auto; /* Pushes the message to the right */
+  background-color: #2196F3;
+  color: white;
+  border-radius: 12px 12px 0 12px;
+  padding: 10px;
+  max-width: 75%;
+  word-wrap: break-word; /* Ensures text wraps */
+}
+
+.textLeft {
+  margin-right: auto; /* Pushes the message to the left */
+  background-color: rgb(229, 231, 235);
+  color: black;
+  border-radius: 12px 12px 12px 0;
+  padding: 10px;
+  max-width: 75%;
+  word-wrap: break-word; /* Ensures text wraps */
 }
